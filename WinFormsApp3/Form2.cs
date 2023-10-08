@@ -46,9 +46,10 @@ namespace WinFormsApp3
             
             
             Form1 form1 = new Form1(musteriler);
-            form1.ListeyeYazdir();
+            //form1.ListeyeYazdir();
             form1.Refresh();
             this.Close();
+            form1.Show();
             
 
         }

@@ -40,7 +40,6 @@
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(312, 284);
             listBox1.TabIndex = 0;
-            
             listBox1.DoubleClick += listBox1_DoubleClick;
             // 
             // button1
@@ -62,6 +61,7 @@
             Controls.Add(listBox1);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             ResumeLayout(false);
         }
 

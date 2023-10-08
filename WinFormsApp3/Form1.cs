@@ -7,7 +7,7 @@ namespace WinFormsApp3
         public Form1()
         {
             InitializeComponent();
-            ListeyeYazdir();
+            //ListeyeYazdir();
 
 
         }
@@ -30,7 +30,8 @@ namespace WinFormsApp3
         {
 
             Form2 form2 = new Form2();
-            form2.ShowDialog();
+            form2.Show();
+            this.Hide();
 
 
 
@@ -43,12 +44,12 @@ namespace WinFormsApp3
 
             if (secilenAdSoyad != null)
             {
-                // Seçilen müþterinin bilgilerini bulun
+
                 Musteri secilenMusteri = _musteriler.FirstOrDefault(m => m.AdSoyad == secilenAdSoyad);
 
                 if (secilenMusteri != null)
                 {
-                    // Müþteri bilgilerini MessageBox ile göster
+
                     string musteriBilgileri = $"Ad Soyad: {secilenMusteri.AdSoyad}\n" +
                                               $"Telefon: {secilenMusteri.Telefon}\n" +
                                               $"Yaþ: {secilenMusteri.Yas}\n" +
@@ -59,13 +60,21 @@ namespace WinFormsApp3
             }
         }
 
-        public void ListeyeYazdir()
+        private void Form1_Load(object sender, EventArgs e)
         {
-            foreach (Musteri item in _musteriler)
+            foreach (var item in _musteriler)
             {
                 listBox1.Items.Add(item.AdSoyad);
             }
-            listBox1.Items.AddRange(_musteriler.ToArray());
         }
+
+        //public void ListeyeYazdir()
+        //{
+        //    foreach (Musteri item in _musteriler)
+        //    {
+        //        listBox1.Items.Add(item.AdSoyad);
+        //    }
+        //    listBox1.Items.AddRange(_musteriler.ToArray());
+        //}
     }
 }
