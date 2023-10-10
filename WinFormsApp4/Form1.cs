@@ -1,4 +1,5 @@
 using System.Security.Cryptography;
+using System.Text.Json;
 
 namespace WinFormsApp4
 {
@@ -10,6 +11,20 @@ namespace WinFormsApp4
             InitializeComponent();
             OrnekVerileriYukle();
             KisileriListele();
+        }
+
+        private void VerileriOku()
+        {
+            try
+            {
+                string json = File.ReadAllText("veri.json");
+                kisiler = JsonSerializer.Deserialize<List<Kisi>>(json);
+            }
+            catch (Exception)
+            {
+
+                OrnekVerileriYukle();
+            }
         }
 
         private void KisileriListele()
@@ -55,9 +70,17 @@ namespace WinFormsApp4
         {
             if (listBox1.SelectedItem != null)
             {
-                Kisi silinecekKisi = (Kisi)listBox1.SelectedItem;
-                kisiler.Remove(silinecekKisi);
-                KisileriListele();
+                int sid = listBox1.SelectedIndex;
+                DialogResult cevap = MessageBox.Show("silmek istediginze emin misiniz ?", "Silme Onayý", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+                if (cevap == DialogResult.Yes)
+                {
+                    Kisi silinecekKisi = (Kisi)listBox1.SelectedItem;
+                    kisiler.Remove(silinecekKisi);
+                    KisileriListele();
+                    listBox1.SelectedIndex = Math.Min(sid, listBox1.Items.Count - 1); // en sonuncuyu secýnce uygulama patlamasýn dýye
+                }
+
                 // return;  void metod olsa bile direk koddan cýkmak ýcýn kullanabýlýyoruz. bundan sonra else yazmadan direk mevcut
                 // kodu yazabýlýrsýn
             }
@@ -107,5 +130,21 @@ namespace WinFormsApp4
             KisileriListele();
             listBox1.SelectedIndex = yeniIndex;
         }
+
+        private void listBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (listBox1.SelectedIndex > -1 && e.KeyCode == Keys.Delete)
+            {
+                btnSil.PerformClick();
+            }
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //kisiler listesini serilize et ve kaydet
+            string json = JsonSerializer.Serialize(kisiler);
+            File.WriteAllText("veri.json", json);
+        }
+
     }
 }

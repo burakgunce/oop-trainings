@@ -49,6 +49,7 @@
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(325, 324);
             listBox1.TabIndex = 0;
+            listBox1.KeyDown += listBox1_KeyDown;
             // 
             // label1
             // 
@@ -152,6 +153,7 @@
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            FormClosing += Form1_FormClosing;
             ResumeLayout(false);
             PerformLayout();
         }
