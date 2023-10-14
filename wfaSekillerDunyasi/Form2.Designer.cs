@@ -51,6 +51,9 @@
             btnTemizle = new Button();
             btnKaydet = new Button();
             colorDialog1 = new ColorDialog();
+            label7 = new Label();
+            txtMetin = new TextBox();
+            btnMetinEkle = new Button();
             ((System.ComponentModel.ISupportInitialize)nudX).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudY).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudGenislik).BeginInit();
@@ -216,6 +219,7 @@
             btnSil.Size = new Size(37, 28);
             btnSil.TabIndex = 16;
             btnSil.UseVisualStyleBackColor = true;
+            btnSil.Click += btnSil_Click;
             // 
             // btnAsagi
             // 
@@ -239,27 +243,59 @@
             // 
             // btnTemizle
             // 
-            btnTemizle.Location = new Point(28, 461);
+            btnTemizle.Location = new Point(28, 459);
             btnTemizle.Name = "btnTemizle";
             btnTemizle.Size = new Size(100, 28);
             btnTemizle.TabIndex = 19;
             btnTemizle.Text = "Temizle";
             btnTemizle.UseVisualStyleBackColor = true;
+            btnTemizle.Click += btnTemizle_Click;
             // 
             // btnKaydet
             // 
-            btnKaydet.Location = new Point(146, 461);
+            btnKaydet.Location = new Point(146, 459);
             btnKaydet.Name = "btnKaydet";
             btnKaydet.Size = new Size(100, 28);
             btnKaydet.TabIndex = 20;
             btnKaydet.Text = "Kaydet";
             btnKaydet.UseVisualStyleBackColor = true;
+            btnKaydet.Click += btnKaydet_Click;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(34, 502);
+            label7.Name = "label7";
+            label7.Size = new Size(47, 20);
+            label7.TabIndex = 21;
+            label7.Text = "Metin";
+            
+            // 
+            // txtMetin
+            // 
+            txtMetin.Location = new Point(98, 499);
+            txtMetin.Name = "txtMetin";
+            txtMetin.Size = new Size(522, 27);
+            txtMetin.TabIndex = 22;
+            // 
+            // btnMetinEkle
+            // 
+            btnMetinEkle.Location = new Point(626, 498);
+            btnMetinEkle.Name = "btnMetinEkle";
+            btnMetinEkle.Size = new Size(99, 28);
+            btnMetinEkle.TabIndex = 23;
+            btnMetinEkle.Text = "Metin Ekle";
+            btnMetinEkle.UseVisualStyleBackColor = true;
+            btnMetinEkle.Click += btnMetinEkle_Click;
             // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(737, 509);
+            ClientSize = new Size(737, 743);
+            Controls.Add(btnMetinEkle);
+            Controls.Add(txtMetin);
+            Controls.Add(label7);
             Controls.Add(btnKaydet);
             Controls.Add(btnTemizle);
             Controls.Add(pnlCizim);
@@ -318,5 +354,8 @@
         private Button btnTemizle;
         private Button btnKaydet;
         private ColorDialog colorDialog1;
+        private Label label7;
+        private TextBox txtMetin;
+        private Button btnMetinEkle;
     }
 }
