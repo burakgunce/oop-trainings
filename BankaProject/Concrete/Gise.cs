@@ -9,6 +9,6 @@ namespace BankaProject.Concrete
 {
     public class Gise : Musteri
     {
-        public override bool OncelikDurumu { get { return false; } }
+        //public override bool OncelikDurumu { get { return false; } }
     }
 }

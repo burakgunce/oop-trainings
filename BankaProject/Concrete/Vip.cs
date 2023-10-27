@@ -9,6 +9,6 @@ namespace BankaProject.Concrete
 {
     public class Vip : Musteri
     {
-        public override bool OncelikDurumu { get { return true; } }
+        //public override bool OncelikDurumu { get { return true; } }
     }
 }
