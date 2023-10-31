@@ -14,7 +14,7 @@ namespace KahveciProject.Concrete
 
         public Durum  Durum { get; set; }
 
-        public void SiparisAl(Kahve kahve)
+        public void SiparisAl(Musteri musteri)
         {
 
         }
