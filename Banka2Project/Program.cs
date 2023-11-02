@@ -5,6 +5,7 @@
         static void Main(string[] args)
         {
             List<int> siraNumaralari = new List<int>();
+            List<int> vipSiralar = new List<int>();
         }
     }
 }
