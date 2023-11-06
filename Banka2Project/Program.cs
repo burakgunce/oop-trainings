@@ -1,4 +1,6 @@
-﻿namespace Banka2Project
+﻿using Banka2Project.Utilities;
+
+namespace Banka2Project
 {
     internal class Program
     {
@@ -8,6 +10,8 @@
             List<int> vipSiralar = new List<int>();
             List<int> bireyselSiralar = new List<int>();
             List<int> giseSiralar = new List<int>();
+
+            NumHelper numHelper = new NumHelper();
         }
     }
 }
