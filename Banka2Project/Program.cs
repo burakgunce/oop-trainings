@@ -12,6 +12,7 @@ namespace Banka2Project
             List<int> giseSiralar = new List<int>();
 
             NumHelper numHelper = new NumHelper();
+            numHelper.SiraNumarasiVer();
         }
     }
 }
