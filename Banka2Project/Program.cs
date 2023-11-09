@@ -1,4 +1,5 @@
-﻿using Banka2Project.Utilities;
+﻿using Banka2Project.Abstract;
+using Banka2Project.Utilities;
 
 namespace Banka2Project
 {
@@ -12,6 +13,7 @@ namespace Banka2Project
             List<int> giseSiralar = new List<int>();
 
             NumHelper numHelper = new NumHelper();
+            Musteri musteri1 = new Musteri();
             numHelper.SiraNumarasiVer();
         }
     }
