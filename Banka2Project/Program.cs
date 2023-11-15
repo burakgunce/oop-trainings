@@ -15,7 +15,9 @@ namespace Banka2Project
             NumHelper numHelper = new NumHelper();
             Musteri musteri1 = new Musteri();
             musteri1.Tc = "12345678";
-            numHelper.SiraNumarasiVer();
+            numHelper.SiraNumarasiVer(musteri1);
+
+            Musteri musteri2 = new Musteri();
         }
     }
 }
