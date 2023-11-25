@@ -18,6 +18,7 @@ namespace Banka2Project
             numHelper.SiraNumarasiVer(musteri1);
 
             Musteri musteri2 = new Musteri();
+            musteri2.Tc = "1111111";
         }
     }
 }
