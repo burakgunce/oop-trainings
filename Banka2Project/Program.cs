@@ -13,12 +13,14 @@ namespace Banka2Project
             List<int> giseSiralar = new List<int>();
 
             NumHelper numHelper = new NumHelper();
+            
             Musteri musteri1 = new Musteri();
             musteri1.Tc = "12345678";
             numHelper.SiraNumarasiVer(musteri1);
 
             Musteri musteri2 = new Musteri();
             musteri2.Tc = "1111111";
+            numHelper.SiraNumarasiVer(musteri2);
         }
     }
 }
